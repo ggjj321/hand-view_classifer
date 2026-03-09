@@ -164,12 +164,15 @@ class HandViewClassifier:
 
 def main():
     # 設定路徑
-    input_folder = "right_hand_files_2025-06-02_to_2025-06-06"
-    output_folder = "classified_hand_videos"
-    
-    # 創建分類器並處理影片
-    classifier = HandViewClassifier(input_folder, output_folder)
-    classifier.process_videos()
+    dates = ["2025-07-07_to_2025-07-11", "2025-07-14_to_2025-07-18", "2025-07-21_to_2025-07-25", "2025-07-28_to_2025-08-01", "2025-08-04_to_2025-08-08", "2025-08-11_to_2025-08-15", "2025-08-18_to_2025-08-22", "2025-08-25_to_2025-08-29"]
+
+    for date in dates:
+        input_folder = f"right_hand_files_{date}"
+        output_folder = f"classified_hand_videos"
+        
+        # 創建分類器並處理影片
+        classifier = HandViewClassifier(input_folder, output_folder)
+        classifier.process_videos()
 
 
 if __name__ == "__main__":
